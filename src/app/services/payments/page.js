@@ -21,15 +21,152 @@ import {
   Activity,
 } from "lucide-react";
 
+// Reusable Components
+const StatCard = ({ value, label, bgColor, borderColor, textColor }) => (
+  <div className={`${bgColor} rounded-lg p-4 border ${borderColor}`}>
+    <div className={`text-2xl font-bold ${textColor} mb-1`}>{value}</div>
+    <div className="text-sm text-gray-400">{label}</div>
+  </div>
+);
+
+const FeatureCard = ({
+  icon: Icon,
+  iconBg,
+  iconColor,
+  title,
+  description,
+  features,
+}) => (
+  <div className="bg-white/5 rounded-lg border border-white/10 p-6 hover:bg-white/10 transition-all">
+    <div
+      className={`w-12 h-12 ${iconBg} rounded-lg flex items-center justify-center mb-4`}
+    >
+      <Icon size={24} className={iconColor} />
+    </div>
+    <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+    <p className="text-gray-300 mb-4">{description}</p>
+    <ul className="space-y-2 text-sm text-gray-300">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center space-x-2">
+          <CheckCircle size={14} className="text-green-400" />
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+const PricingCard = ({
+  title,
+  price,
+  features,
+  buttonText,
+  buttonStyle,
+  isPopular = false,
+}) => (
+  <div
+    className={`${
+      isPopular
+        ? "bg-white/10 border-green-400/30"
+        : "bg-white/5 border-white/10"
+    } rounded-lg border p-8 relative`}
+  >
+    {isPopular && (
+      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+        <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+          Most Popular
+        </span>
+      </div>
+    )}
+    <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
+    <div className="text-3xl font-bold text-white mb-6">{price}</div>
+    <ul className="space-y-3 mb-8">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center space-x-2">
+          <CheckCircle size={16} className="text-green-400" />
+          <span className="text-gray-300">{feature}</span>
+        </li>
+      ))}
+    </ul>
+    <button
+      className={`w-full ${buttonStyle} py-3 rounded font-medium transition-colors`}
+    >
+      {buttonText}
+    </button>
+  </div>
+);
+
+const FlowCard = ({
+  icon: Icon,
+  iconBg,
+  iconColor,
+  title,
+  subtitle,
+  description,
+  features,
+}) => (
+  <div className={`${iconBg} rounded-2xl p-8 border ${iconColor}`}>
+    <div className="flex items-center mb-6">
+      <div
+        className={`w-12 h-12 ${iconBg
+          .replace("from-", "bg-")
+          .replace(
+            "to-",
+            ""
+          )} rounded-lg flex items-center justify-center mr-4`}
+      >
+        <Icon size={24} className={iconColor.replace("border-", "text-")} />
+      </div>
+      <div>
+        <h3 className="text-2xl font-semibold text-white">{title}</h3>
+        <p className="text-gray-300">{subtitle}</p>
+      </div>
+    </div>
+    <p className="text-lg text-gray-200 mb-6">{description}</p>
+    <div className="space-y-4">
+      {features.map((feature, index) => (
+        <div key={index} className="flex items-center space-x-3">
+          <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
+            <feature.icon
+              size={16}
+              className={iconColor.replace("border-", "text-")}
+            />
+          </div>
+          <span className="text-gray-200">{feature.text}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const SpecItem = ({ icon: Icon, iconColor, text }) => (
+  <div className="flex items-center space-x-3">
+    <Icon size={20} className={iconColor} />
+    <span className="text-gray-200">{text}</span>
+  </div>
+);
+
 const PaymentsPage = () => {
   return (
-    <div className="min-h-screen bg-[#1A2E2A] text-gray-200">
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundColor: "var(--color-primary-bg)",
+        color: "var(--color-text-primary)",
+      }}
+    >
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-transparent backdrop-blur-sm bg-[#1A2E2A]/80 border-b border-white/10 z-50">
+      <nav
+        className="fixed top-0 w-full backdrop-blur-sm border-b border-white/10 z-50"
+        style={{ backgroundColor: "var(--color-nav-bg)" }}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
+              <div
+                className="w-8 h-8 rounded flex items-center justify-center"
+                style={{ backgroundColor: "var(--color-green-primary)" }}
+              >
                 <span className="text-white text-sm font-bold">Z</span>
               </div>
               <span className="text-white text-lg font-medium">
@@ -51,7 +188,13 @@ const PaymentsPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-purple-500/20 text-purple-400 text-sm px-4 py-2 rounded-full mb-6">
+              <div
+                className="inline-flex items-center text-sm px-4 py-2 rounded-full mb-6"
+                style={{
+                  backgroundColor: "var(--color-overlay-green)",
+                  color: "var(--color-green-secondary)",
+                }}
+              >
                 <CreditCard className="w-4 h-4 mr-2" />
                 Integrated Payment Solutions
               </div>
@@ -59,10 +202,15 @@ const PaymentsPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Complete Payment
                 <br />
-                <span className="text-purple-400">Ecosystem</span>
+                <span style={{ color: "var(--color-green-secondary)" }}>
+                  Ecosystem
+                </span>
               </h1>
 
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              <p
+                className="text-xl mb-8 leading-relaxed"
+                style={{ color: "var(--color-text-secondary)" }}
+              >
                 <strong>Move In:</strong> We process all your clients payments
                 in an instant with only a few steps
                 <br />
@@ -72,11 +220,25 @@ const PaymentsPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-purple-600 text-white px-6 py-3 rounded font-medium hover:bg-purple-700 transition-colors inline-flex items-center justify-center space-x-2">
+                <button
+                  className="text-white px-6 py-3 rounded font-medium transition-colors inline-flex items-center justify-center space-x-2"
+                  style={{ backgroundColor: "var(--color-green-primary)" }}
+                  onMouseEnter={(e) =>
+                    (e.target.style.backgroundColor =
+                      "var(--color-green-hover)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.target.style.backgroundColor =
+                      "var(--color-green-primary)")
+                  }
+                >
                   <span>Get Started</span>
                   <ArrowRight size={16} />
                 </button>
-                <button className="border border-white/20 text-gray-300 px-6 py-3 rounded font-medium hover:bg-white/5 transition-colors">
+                <button
+                  className="border border-white/20 px-6 py-3 rounded font-medium hover:bg-white/5 transition-colors"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
                   View Documentation
                 </button>
               </div>
@@ -85,30 +247,34 @@ const PaymentsPage = () => {
             <div className="relative">
               <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-purple-500/20 rounded-lg p-4 border border-purple-500/30">
-                    <div className="text-2xl font-bold text-purple-400 mb-1">
-                      99.9%
-                    </div>
-                    <div className="text-sm text-gray-400">Success Rate</div>
-                  </div>
-                  <div className="bg-green-500/20 rounded-lg p-4 border border-green-500/30">
-                    <div className="text-2xl font-bold text-green-400 mb-1">
-                      &lt;3s
-                    </div>
-                    <div className="text-sm text-gray-400">Processing</div>
-                  </div>
-                  <div className="bg-blue-500/20 rounded-lg p-4 border border-blue-500/30">
-                    <div className="text-2xl font-bold text-blue-400 mb-1">
-                      200+
-                    </div>
-                    <div className="text-sm text-gray-400">Countries</div>
-                  </div>
-                  <div className="bg-orange-500/20 rounded-lg p-4 border border-orange-500/30">
-                    <div className="text-2xl font-bold text-orange-400 mb-1">
-                      50+
-                    </div>
-                    <div className="text-sm text-gray-400">Currencies</div>
-                  </div>
+                  <StatCard
+                    value="99.9%"
+                    label="Success Rate"
+                    bgColor="bg-white/5"
+                    borderColor="border-white/10"
+                    textColor="text-green-400"
+                  />
+                  <StatCard
+                    value="&lt;3s"
+                    label="Processing"
+                    bgColor="bg-white/5"
+                    borderColor="border-white/10"
+                    textColor="text-green-400"
+                  />
+                  <StatCard
+                    value="200+"
+                    label="Countries"
+                    bgColor="bg-white/5"
+                    borderColor="border-white/10"
+                    textColor="text-green-400"
+                  />
+                  <StatCard
+                    value="50+"
+                    label="Currencies"
+                    bgColor="bg-white/5"
+                    borderColor="border-white/10"
+                    textColor="text-green-400"
+                  />
                 </div>
               </div>
             </div>
@@ -120,111 +286,47 @@ const PaymentsPage = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Complete Payment Flow
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p
+              className="text-xl max-w-3xl mx-auto"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
               From receiving payments to settling invoices, we handle the entire
               payment lifecycle.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Move In - Payment Processing */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 border border-green-200">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                  <ArrowDown size={24} className="text-green-600" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Move In
-                  </h3>
-                  <p className="text-gray-600">Payment Processing</p>
-                </div>
-              </div>
-
-              <p className="text-lg text-gray-700 mb-6">
-                We process all your clients payments in an instant with only a
-                few steps
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <CreditCard size={16} className="text-green-600" />
-                  </div>
-                  <span className="text-gray-700">
-                    Multiple payment methods
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <Zap size={16} className="text-green-600" />
-                  </div>
-                  <span className="text-gray-700">Instant processing</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <Shield size={16} className="text-green-600" />
-                  </div>
-                  <span className="text-gray-700">Secure transactions</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <Globe size={16} className="text-green-600" />
-                  </div>
-                  <span className="text-gray-700">Global reach</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Move Out - Invoice Settlement */}
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-8 border border-blue-200">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                  <ArrowUp size={24} className="text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Move Out
-                  </h3>
-                  <p className="text-gray-600">Invoice Settlement</p>
-                </div>
-              </div>
-
-              <p className="text-lg text-gray-700 mb-6">
-                We help to settle all your invoices and payable to any form of
-                channel or wallet required
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <DollarSign size={16} className="text-blue-600" />
-                  </div>
-                  <span className="text-gray-700">Automated settlements</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <Mobile size={16} className="text-blue-600" />
-                  </div>
-                  <span className="text-gray-700">Digital wallets</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <BarChart3 size={16} className="text-blue-600" />
-                  </div>
-                  <span className="text-gray-700">Real-time reporting</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                    <Clock size={16} className="text-blue-600" />
-                  </div>
-                  <span className="text-gray-700">Scheduled payments</span>
-                </div>
-              </div>
-            </div>
+            <FlowCard
+              icon={ArrowDown}
+              iconBg="bg-white/5"
+              iconColor="border-green-400/30"
+              title="Move In"
+              subtitle="Payment Processing"
+              description="We process all your clients payments in an instant with only a few steps"
+              features={[
+                { icon: CreditCard, text: "Multiple payment methods" },
+                { icon: Zap, text: "Instant processing" },
+                { icon: Shield, text: "Secure transactions" },
+                { icon: Globe, text: "Global reach" },
+              ]}
+            />
+            <FlowCard
+              icon={ArrowUp}
+              iconBg="bg-white/5"
+              iconColor="border-green-400/30"
+              title="Move Out"
+              subtitle="Invoice Settlement"
+              description="We help to settle all your invoices and payable to any form of channel or wallet required"
+              features={[
+                { icon: DollarSign, text: "Automated settlements" },
+                { icon: Mobile, text: "Digital wallets" },
+                { icon: BarChart3, text: "Real-time reporting" },
+                { icon: Clock, text: "Scheduled payments" },
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -233,176 +335,86 @@ const PaymentsPage = () => {
       <section className="py-20 bg-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Payment Features
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p
+              className="text-xl max-w-3xl mx-auto"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
               Comprehensive payment solutions designed for modern businesses.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <CreditCard size={24} className="text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Multiple Payment Methods
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Accept payments via credit cards, debit cards, bank transfers,
-                digital wallets, and more.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Credit/Debit Cards</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Bank Transfers</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Digital Wallets</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                <Zap size={24} className="text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Instant Processing
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Lightning-fast payment processing with real-time confirmation
-                and immediate fund availability.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Real-time Processing</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Instant Confirmation</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Immediate Settlement</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Shield size={24} className="text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Enterprise Security
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Bank-level security with PCI DSS compliance, encryption, and
-                fraud detection systems.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>PCI DSS Compliant</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>End-to-End Encryption</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Fraud Detection</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Globe size={24} className="text-orange-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Global Reach
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Accept payments from customers worldwide with support for
-                multiple currencies and local payment methods.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>50+ Currencies</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>200+ Countries</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Local Payment Methods</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                <BarChart3 size={24} className="text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Advanced Analytics
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Comprehensive reporting and analytics to help you understand
-                your payment patterns and optimize revenue.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Real-time Reports</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Transaction Analytics</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Revenue Insights</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                <Activity size={24} className="text-teal-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                API Integration
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Easy integration with your existing systems through our
-                comprehensive API and developer tools.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>RESTful API</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>SDKs & Libraries</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-600" />
-                  <span>Webhook Support</span>
-                </li>
-              </ul>
-            </div>
+            <FeatureCard
+              icon={CreditCard}
+              iconBg="bg-white/10"
+              iconColor="text-green-400"
+              title="Multiple Payment Methods"
+              description="Accept payments via credit cards, debit cards, bank transfers, digital wallets, and more."
+              features={[
+                "Credit/Debit Cards",
+                "Bank Transfers",
+                "Digital Wallets",
+              ]}
+            />
+            <FeatureCard
+              icon={Zap}
+              iconBg="bg-white/10"
+              iconColor="text-green-400"
+              title="Instant Processing"
+              description="Lightning-fast payment processing with real-time confirmation and immediate fund availability."
+              features={[
+                "Real-time Processing",
+                "Instant Confirmation",
+                "Immediate Settlement",
+              ]}
+            />
+            <FeatureCard
+              icon={Shield}
+              iconBg="bg-white/10"
+              iconColor="text-green-400"
+              title="Enterprise Security"
+              description="Bank-level security with PCI DSS compliance, encryption, and fraud detection systems."
+              features={[
+                "PCI DSS Compliant",
+                "End-to-End Encryption",
+                "Fraud Detection",
+              ]}
+            />
+            <FeatureCard
+              icon={Globe}
+              iconBg="bg-white/10"
+              iconColor="text-green-400"
+              title="Global Reach"
+              description="Accept payments from customers worldwide with support for multiple currencies and local payment methods."
+              features={[
+                "50+ Currencies",
+                "200+ Countries",
+                "Local Payment Methods",
+              ]}
+            />
+            <FeatureCard
+              icon={BarChart3}
+              iconBg="bg-white/10"
+              iconColor="text-green-400"
+              title="Advanced Analytics"
+              description="Comprehensive reporting and analytics to help you understand your payment patterns and optimize revenue."
+              features={[
+                "Real-time Reports",
+                "Transaction Analytics",
+                "Revenue Insights",
+              ]}
+            />
+            <FeatureCard
+              icon={Activity}
+              iconBg="bg-white/10"
+              iconColor="text-green-400"
+              title="API Integration"
+              description="Easy integration with your existing systems through our comprehensive API and developer tools."
+              features={["RESTful API", "SDKs & Libraries", "Webhook Support"]}
+            />
           </div>
         </div>
       </section>
@@ -411,83 +423,92 @@ const PaymentsPage = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Technical Specifications
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p
+              className="text-xl max-w-3xl mx-auto"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
               Enterprise-grade payment infrastructure with industry-leading
               performance.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            <div className="bg-white/5 rounded-lg border border-white/10 p-8">
+              <h3 className="text-2xl font-semibold text-white mb-6">
                 Performance Metrics
               </h3>
               <div className="space-y-4">
-                <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                  <span className="text-gray-600">Processing Speed</span>
-                  <span className="font-medium text-gray-900">
-                    &lt; 3 seconds
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span style={{ color: "var(--color-text-secondary)" }}>
+                    Processing Speed
                   </span>
+                  <span className="font-medium text-white">&lt; 3 seconds</span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                  <span className="text-gray-600">Success Rate</span>
-                  <span className="font-medium text-green-600">99.9%</span>
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span style={{ color: "var(--color-text-secondary)" }}>
+                    Success Rate
+                  </span>
+                  <span className="font-medium text-green-400">99.9%</span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                  <span className="text-gray-600">Uptime SLA</span>
-                  <span className="font-medium text-blue-600">99.99%</span>
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span style={{ color: "var(--color-text-secondary)" }}>
+                    Uptime SLA
+                  </span>
+                  <span className="font-medium text-green-400">99.99%</span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                  <span className="text-gray-600">API Response Time</span>
-                  <span className="font-medium text-gray-900">&lt; 200ms</span>
+                <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <span style={{ color: "var(--color-text-secondary)" }}>
+                    API Response Time
+                  </span>
+                  <span className="font-medium text-white">&lt; 200ms</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
-                  <span className="text-gray-600">Transaction Volume</span>
-                  <span className="font-medium text-gray-900">Unlimited</span>
+                  <span style={{ color: "var(--color-text-secondary)" }}>
+                    Transaction Volume
+                  </span>
+                  <span className="font-medium text-white">Unlimited</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            <div className="bg-white/5 rounded-lg border border-white/10 p-8">
+              <h3 className="text-2xl font-semibold text-white mb-6">
                 Security & Compliance
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Lock size={20} className="text-blue-600" />
-                  <span className="text-gray-700">
-                    PCI DSS Level 1 Compliant
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Shield size={20} className="text-green-600" />
-                  <span className="text-gray-700">256-bit SSL Encryption</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Activity size={20} className="text-purple-600" />
-                  <span className="text-gray-700">
-                    Real-time Fraud Detection
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Wifi size={20} className="text-orange-600" />
-                  <span className="text-gray-700">
-                    Secure Network Protocols
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <BarChart3 size={20} className="text-indigo-600" />
-                  <span className="text-gray-700">Audit Trail & Logging</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Users size={20} className="text-teal-600" />
-                  <span className="text-gray-700">
-                    Multi-factor Authentication
-                  </span>
-                </div>
+                <SpecItem
+                  icon={Lock}
+                  iconColor="text-green-400"
+                  text="PCI DSS Level 1 Compliant"
+                />
+                <SpecItem
+                  icon={Shield}
+                  iconColor="text-green-400"
+                  text="256-bit SSL Encryption"
+                />
+                <SpecItem
+                  icon={Activity}
+                  iconColor="text-green-400"
+                  text="Real-time Fraud Detection"
+                />
+                <SpecItem
+                  icon={Wifi}
+                  iconColor="text-green-400"
+                  text="Secure Network Protocols"
+                />
+                <SpecItem
+                  icon={BarChart3}
+                  iconColor="text-green-400"
+                  text="Audit Trail & Logging"
+                />
+                <SpecItem
+                  icon={Users}
+                  iconColor="text-green-400"
+                  text="Multi-factor Authentication"
+                />
               </div>
             </div>
           </div>
@@ -498,137 +519,125 @@ const PaymentsPage = () => {
       <section className="py-20 bg-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Payment Processing Plans
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p
+              className="text-xl max-w-3xl mx-auto"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
               Transparent pricing with no hidden fees. Choose the plan that fits
               your business.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Starter
-              </h3>
-              <div className="text-3xl font-bold text-gray-900 mb-6">
-                2.9%<span className="text-lg text-gray-600"> + $0.30</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Up to $10K/month</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Basic Payment Methods</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Standard Support</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Basic Reporting</span>
-                </li>
-              </ul>
-              <button className="w-full bg-gray-100 text-gray-700 py-3 rounded font-medium hover:bg-gray-200 transition-colors">
-                Get Started
-              </button>
-            </div>
-
-            <div className="bg-purple-50 rounded-lg border border-purple-200 p-8 relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
-                </span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Business
-              </h3>
-              <div className="text-3xl font-bold text-gray-900 mb-6">
-                2.5%<span className="text-lg text-gray-600"> + $0.30</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Up to $100K/month</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">All Payment Methods</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Priority Support</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Advanced Analytics</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Fraud Protection</span>
-                </li>
-              </ul>
-              <button className="w-full bg-purple-600 text-white py-3 rounded font-medium hover:bg-purple-700 transition-colors">
-                Get Started
-              </button>
-            </div>
-
-            <div className="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Enterprise
-              </h3>
-              <div className="text-3xl font-bold text-gray-900 mb-6">
-                Custom<span className="text-lg text-gray-600"> pricing</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Unlimited Volume</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Custom Integrations</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">Dedicated Support</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">White-label Solutions</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <CheckCircle size={16} className="text-green-600" />
-                  <span className="text-gray-600">SLA Guarantees</span>
-                </li>
-              </ul>
-              <button className="w-full bg-gray-100 text-gray-700 py-3 rounded font-medium hover:bg-gray-200 transition-colors">
-                Contact Sales
-              </button>
-            </div>
+            <PricingCard
+              title="Starter"
+              price={
+                <>
+                  2.9%
+                  <span
+                    className="text-lg"
+                    style={{ color: "var(--color-text-tertiary)" }}
+                  >
+                    {" "}
+                    + $0.30
+                  </span>
+                </>
+              }
+              features={[
+                "Up to $10K/month",
+                "Basic Payment Methods",
+                "Standard Support",
+                "Basic Reporting",
+              ]}
+              buttonText="Get Started"
+              buttonStyle="bg-white/10 text-white hover:bg-white/20"
+            />
+            <PricingCard
+              title="Business"
+              price={
+                <>
+                  2.5%
+                  <span
+                    className="text-lg"
+                    style={{ color: "var(--color-text-tertiary)" }}
+                  >
+                    {" "}
+                    + $0.30
+                  </span>
+                </>
+              }
+              features={[
+                "Up to $100K/month",
+                "All Payment Methods",
+                "Priority Support",
+                "Advanced Analytics",
+                "Fraud Protection",
+              ]}
+              buttonText="Get Started"
+              buttonStyle="bg-green-600 text-white hover:bg-green-700"
+              isPopular={true}
+            />
+            <PricingCard
+              title="Enterprise"
+              price={
+                <>
+                  Custom
+                  <span
+                    className="text-lg"
+                    style={{ color: "var(--color-text-tertiary)" }}
+                  >
+                    {" "}
+                    pricing
+                  </span>
+                </>
+              }
+              features={[
+                "Unlimited Volume",
+                "Custom Integrations",
+                "Dedicated Support",
+                "White-label Solutions",
+                "SLA Guarantees",
+              ]}
+              buttonText="Contact Sales"
+              buttonStyle="bg-white/10 text-white hover:bg-white/20"
+            />
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-600">
+      <section
+        className="py-20"
+        style={{ backgroundColor: "var(--color-green-primary)" }}
+      >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Accept Payments?
           </h2>
-          <p className="text-xl text-green-100 mb-8">
+          <p
+            className="text-xl mb-8"
+            style={{ color: "var(--color-text-accent)" }}
+          >
             Join thousands of businesses that trust Zeta Solutions for their
             payment processing needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-3 rounded font-medium hover:bg-gray-100 transition-colors">
+            <button
+              className="bg-white px-8 py-3 rounded font-medium hover:bg-gray-100 transition-colors"
+              style={{ color: "var(--color-green-primary)" }}
+            >
               Start Processing Payments
             </button>
-            <button className="border border-white text-white px-8 py-3 rounded font-medium hover:bg-white hover:text-green-600 transition-colors">
+            <button
+              className="border border-white text-white px-8 py-3 rounded font-medium hover:bg-white transition-colors"
+              onMouseEnter={(e) =>
+                (e.target.style.color = "var(--color-green-primary)")
+              }
+              onMouseLeave={(e) => (e.target.style.color = "white")}
+            >
               Contact Sales
             </button>
           </div>
@@ -641,18 +650,30 @@ const PaymentsPage = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-xl font-bold text-white">Zeta Solutions</p>
-              <p className="text-gray-400">
+              <p style={{ color: "var(--color-text-quaternary)" }}>
                 © 2024 Zeta Solutions. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a
+                href="#"
+                style={{ color: "var(--color-text-quaternary)" }}
+                className="hover:text-white"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a
+                href="#"
+                style={{ color: "var(--color-text-quaternary)" }}
+                className="hover:text-white"
+              >
                 Terms of Service
               </a>
-              <a href="/contact" className="text-gray-400 hover:text-white">
+              <a
+                href="/contact"
+                style={{ color: "var(--color-text-quaternary)" }}
+                className="hover:text-white"
+              >
                 Contact
               </a>
             </div>
