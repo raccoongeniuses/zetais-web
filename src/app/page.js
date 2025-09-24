@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   ChevronRight,
   Server,
@@ -94,12 +95,14 @@ const ZetaSolutionsLanding = () => {
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="bg-green-500 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-600 transition-colors shadow-md"
-              >
-                Get Started
-              </button>
+              <div className="flex items-center space-x-3">
+                <Link
+                  href="/get-started"
+                  className="bg-green-500 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-600 transition-colors shadow-md"
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
 
             {/* Mobile menu button */}
@@ -250,12 +253,12 @@ const ZetaSolutionsLanding = () => {
               <p className="mb-4 text-green-200">
                 Let us handle the technical details so you can focus on growth.
               </p>
-              <button
-                onClick={() => scrollToSection("contact")}
+              <Link
+                href="/contact"
                 className="bg-green-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-green-600 transition-colors"
               >
                 Contact Sales
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -327,103 +330,52 @@ const ZetaSolutionsLanding = () => {
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* New Merchants */}
             <div className="solution-card rounded-2xl p-8 text-center">
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-green-400" />
+              </div>
               <h3 className="text-2xl font-bold text-white mb-4">
                 New Merchants
               </h3>
               <p className="text-gray-400 mb-6">
                 Ready to bring your business online? Let's talk about how we can
-                help you succeed.
+                help you succeed with our comprehensive onboarding process.
               </p>
-              <form className="text-left">
-                <div className="mb-4">
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-300"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="mt-1 block w-full px-3 py-2 bg-white/5 border border-white/10 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-white"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-300"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="mt-1 block w-full px-3 py-2 bg-white/5 border border-white/10 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-white"
-                  />
-                </div>
-                <div className="mb-6">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-300"
-                  >
-                    How can we help?
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="mt-1 block w-full px-3 py-2 bg-white/5 border border-white/10 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-white"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-green-500 text-white font-semibold py-3 rounded-lg hover:bg-green-600 transition-colors"
+              <div className="space-y-4">
+                <Link
+                  href="/get-started"
+                  className="block w-full bg-green-500 text-white font-semibold py-3 rounded-lg hover:bg-green-600 transition-colors"
                 >
-                  Contact Sales
-                </button>
-              </form>
+                  Start Your Journey
+                </Link>
+                <p className="text-sm text-gray-400">
+                  Complete our detailed form to get personalized recommendations
+                </p>
+              </div>
             </div>
-            {/* Existing Merchants */}
+
+            {/* Contact Sales */}
             <div className="solution-card rounded-2xl p-8 text-center">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-blue-400" />
+              </div>
               <h3 className="text-2xl font-bold text-white mb-4">
-                Existing Merchants
+                Need Support?
               </h3>
               <p className="text-gray-400 mb-6">
-                Welcome back! Log in to your account to manage your services.
+                Already working with us? Get in touch with our support team for
+                assistance with your existing services.
               </p>
-              <form className="text-left">
-                <div className="mb-4">
-                  <label
-                    htmlFor="login-email"
-                    className="block text-sm font-medium text-gray-300"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="login-email"
-                    className="mt-1 block w-full px-3 py-2 bg-white/5 border border-white/10 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-white"
-                  />
-                </div>
-                <div className="mb-6">
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium text-gray-300"
-                  >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    id="password"
-                    className="mt-1 block w-full px-3 py-2 bg-white/5 border border-white/10 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-white"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-gray-700 text-white font-semibold py-3 rounded-lg hover:bg-gray-600 transition-colors"
+              <div className="space-y-4">
+                <Link
+                  href="/contact"
+                  className="block w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition-colors"
                 >
-                  Login
-                </button>
-              </form>
+                  Contact Support
+                </Link>
+                <p className="text-sm text-gray-400">
+                  Get help with your Zeta Solutions services
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -446,12 +398,9 @@ const ZetaSolutionsLanding = () => {
               <a href="#" className="text-gray-400 hover:text-white">
                 Terms of Service
               </a>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-gray-400 hover:text-white"
-              >
+              <Link href="/contact" className="text-gray-400 hover:text-white">
                 Contact
-              </button>
+              </Link>
             </div>
           </div>
         </div>
