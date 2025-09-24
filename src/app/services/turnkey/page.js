@@ -99,8 +99,8 @@ const TurnkeyPage = () => {
                     </div>
                     <div className="text-sm text-gray-400">Support</div>
                   </div>
-                  <div className="bg-orange-500/20 rounded-lg p-4 border border-orange-500/30">
-                    <div className="text-2xl font-bold text-orange-400 mb-1">
+                  <div className="bg-green-500/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="text-2xl font-bold text-green-400 mb-1">
                       500+
                     </div>
                     <div className="text-sm text-gray-400">Projects</div>
@@ -208,8 +208,8 @@ const TurnkeyPage = () => {
             </div>
 
             <div className="bg-white/5 rounded-lg border border-white/10 p-6 hover:bg-white/10 transition-all">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Smartphone size={24} className="text-orange-600" />
+              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                <Smartphone size={24} className="text-green-400" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
                 Mobile Solutions
@@ -345,8 +345,8 @@ const TurnkeyPage = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 size={24} className="text-orange-600" />
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BarChart3 size={24} className="text-green-400" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">
                 4. Launch

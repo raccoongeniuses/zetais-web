@@ -298,8 +298,8 @@ const IntegrationsPage = () => {
             </div>
 
             <div className="bg-[var(--color-border-primary)] rounded-lg border border-[var(--color-border-primary)] p-6 hover:bg-[var(--color-border-primary)]/50 transition-all">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <CreditCard size={24} className="text-orange-600" />
+              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                <CreditCard size={24} className="text-green-400" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-3">
                 Payment & Finance
@@ -512,8 +512,8 @@ const IntegrationsPage = () => {
             </div>
 
             <div className="bg-[var(--color-primary-bg)] rounded-lg border border-[var(--color-border-primary)] p-6 text-center hover:bg-[var(--color-border-primary)] transition-all">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CreditCard size={24} className="text-orange-600" />
+              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CreditCard size={24} className="text-green-400" />
               </div>
               <h3 className="text-lg font-semibold text-[var(--color-text-primary)] mb-2">
                 Stripe

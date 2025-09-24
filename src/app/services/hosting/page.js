@@ -267,8 +267,8 @@ const HostingPage = () => {
             </div>
 
             <div className="bg-[var(--color-border-primary)] rounded-lg border border-[var(--color-border-primary)] p-6 hover:bg-[var(--color-border-primary)]/50 transition-all">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Database size={24} className="text-orange-600" />
+              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                <Database size={24} className="text-green-400" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-3">
                 Data Management
