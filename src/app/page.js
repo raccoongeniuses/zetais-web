@@ -147,10 +147,21 @@ const ZetaSolutionsLanding = () => {
                 <span className="text-blue-600">for Modern Business</span>
               </h1>
 
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                Founded in 2015, Zeta Solutions was born out of a simple
+                realization: setting up and running an online business is not
+                easy. From building a website to managing payments, marketing,
+                and customer engagement—many business owners face overwhelming
+                challenges when trying to bring their products and services
+                online.
+              </p>
+
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Complete turnkey solutions from server management to payment
-                processing. We handle your digital infrastructure so you can
-                focus on growing your business.
+                That's where we come in. At Zeta, we enable businesses to start
+                & thrive in the digital world. Whether you need a turnkey
+                website, secure payment integration, SMS communication tools, or
+                strategic advertising services, we're here to simplify the
+                process and help you succeed.
               </p>
 
               {/* Key Features */}
@@ -281,11 +292,10 @@ const ZetaSolutionsLanding = () => {
                 <Server size={24} className="text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Server & Hosting
+                Server & Webhosting Services
               </h3>
               <p className="text-gray-600 mb-6">
-                Enterprise-grade hosting infrastructure with guaranteed uptime
-                and security.
+                We house and secure all your online domain and its data with it.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center space-x-2">
@@ -312,8 +322,9 @@ const ZetaSolutionsLanding = () => {
                 Turnkey Solutions
               </h3>
               <p className="text-gray-600 mb-6">
-                Complete digital setup and management. Launch your online
-                presence quickly.
+                Start doing business right away, we help you to set up and
+                manage your online requirements, you just need to focus on your
+                operations.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center space-x-2">
@@ -337,11 +348,14 @@ const ZetaSolutionsLanding = () => {
                 <CreditCard size={24} className="text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Payment Solutions
+                Integrated Payment Solutions
               </h3>
               <p className="text-gray-600 mb-6">
-                Secure payment processing with multiple gateways and real-time
-                transactions.
+                <strong>Move In:</strong> We process all your clients payments
+                in an instant with only a few steps
+                <br />
+                <strong>Move Out:</strong> We help to settle all your invoices
+                and payable to any form of channel or wallet required
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center space-x-2">
@@ -368,8 +382,9 @@ const ZetaSolutionsLanding = () => {
                 SMS Services
               </h3>
               <p className="text-gray-600 mb-6">
-                Reliable messaging platform for customer engagement and
-                automated communications.
+                Engage clients with reliable messages. Everything you need to
+                accelerate your go-to-market strategy—while ensuring exceptional
+                message deliverability.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center space-x-2">
@@ -389,11 +404,10 @@ const ZetaSolutionsLanding = () => {
                 <Settings size={24} className="text-indigo-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Third-Party Integrations
+                Misc 3rd Party Products
               </h3>
               <p className="text-gray-600 mb-6">
-                Connect with leading platforms and tools to enhance your
-                operations.
+                We have various 3rd parties products that will help assist
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center space-x-2">
@@ -443,10 +457,12 @@ const ZetaSolutionsLanding = () => {
                 Trusted Partner Since 2015
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                We enable businesses to start and thrive in the digital world.
-                From building websites to managing payments, marketing, and
-                customer engagement—we simplify the complex and help you
-                succeed.
+                Founded in 2015, Zeta Solutions was born out of a simple
+                realization: setting up and running an online business is not
+                easy. From building a website to managing payments, marketing,
+                and customer engagement—many business owners face overwhelming
+                challenges when trying to bring their products and services
+                online.
               </p>
               <p className="text-gray-600 mb-8">
                 Our mission is to make digital transformation accessible,
@@ -475,9 +491,7 @@ const ZetaSolutionsLanding = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">9+ Years</div>
-                    <div className="text-sm text-gray-600">
-                      Industry experience
-                    </div>
+                    <div className="text-sm text-gray-600">Since 2015</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -695,7 +709,7 @@ const ZetaSolutionsLanding = () => {
                 2015. Your trusted partner for digital transformation.
               </p>
               <div className="text-sm text-gray-500">
-                © 2024 Zeta Solutions. All rights reserved.
+                © 2024 Zeta Solutions. All rights reserved. Founded in 2015.
               </div>
             </div>
 
