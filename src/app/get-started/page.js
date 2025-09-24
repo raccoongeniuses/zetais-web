@@ -509,8 +509,8 @@ const GetStartedPage = () => {
       </div>
       <h2 className="text-3xl font-bold text-white mb-4">Thank You!</h2>
       <p className="text-gray-400 mb-6 max-w-md mx-auto">
-        We&apos;ve received your information and will get back to you within 24 hours
-        to discuss your project.
+        We&apos;ve received your information and will get back to you within 24
+        hours to discuss your project.
       </p>
       <div className="space-y-4">
         <Link
