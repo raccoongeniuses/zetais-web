@@ -201,8 +201,8 @@ const ContactPage = () => {
       </div>
       <h2 className="text-3xl font-bold text-white mb-4">Message Sent!</h2>
       <p className="text-gray-400 mb-6 max-w-md mx-auto">
-        Thank you for reaching out! We've received your message and will get
-        back to you within 24 hours.
+        Thank you for reaching out! We&apos;ve received your message and will
+        get back to you within 24 hours.
       </p>
       <div className="space-y-4">
         <Link
@@ -276,7 +276,7 @@ const ContactPage = () => {
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Ready to transform your business? Let's discuss how Zeta
+                Ready to transform your business? Let&apos;s discuss how Zeta
                 Solutions can help you succeed in the digital world.
               </p>
             </div>

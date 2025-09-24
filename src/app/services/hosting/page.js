@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   Server,
   Shield,
@@ -36,12 +37,12 @@ const HostingPage = () => {
                 Zeta Solutions
               </span>
             </div>
-            <a
+            <Link
               href="/"
               className="text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] font-medium transition-colors"
             >
               ← Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

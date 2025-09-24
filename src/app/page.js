@@ -226,7 +226,7 @@ const ZetaSolutionsLanding = () => {
             className="text-lg md:text-xl max-w-2xl mx-auto mb-8"
             style={{ color: "var(--color-text-tertiary)" }}
           >
-            Zeta's cross-border payments solutions connect organisations and
+            Zeta&apos;s cross-border payments solutions connect organisations and
             communities globally to the network they need to thrive. Together,
             we make money move.
           </p>
@@ -586,7 +586,7 @@ const ZetaSolutionsLanding = () => {
                 className="mb-6"
                 style={{ color: "var(--color-text-quaternary)" }}
               >
-                Ready to bring your business online? Let's talk about how we can
+                Ready to bring your business online? Let&apos;s talk about how we can
                 help you succeed with our comprehensive onboarding process.
               </p>
               <div className="space-y-4">

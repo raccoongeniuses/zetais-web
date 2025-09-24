@@ -509,7 +509,7 @@ const GetStartedPage = () => {
       </div>
       <h2 className="text-3xl font-bold text-white mb-4">Thank You!</h2>
       <p className="text-gray-400 mb-6 max-w-md mx-auto">
-        We've received your information and will get back to you within 24 hours
+        We&apos;ve received your information and will get back to you within 24 hours
         to discuss your project.
       </p>
       <div className="space-y-4">
@@ -661,7 +661,7 @@ const GetStartedPage = () => {
                   Quick Response
                 </h3>
                 <p className="text-sm text-gray-400">
-                  We'll get back to you within 24 hours
+                  We&apos;ll get back to you within 24 hours
                 </p>
               </div>
 

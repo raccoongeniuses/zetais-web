@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   CreditCard,
   CheckCircle,
@@ -173,12 +174,12 @@ const PaymentsPage = () => {
                 Zeta Solutions
               </span>
             </div>
-            <a
+            <Link
               href="/"
               className="text-sm text-gray-300 hover:text-white font-medium transition-colors"
             >
               ← Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

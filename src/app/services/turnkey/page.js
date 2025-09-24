@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   Zap,
   CheckCircle,
@@ -37,12 +38,12 @@ const TurnkeyPage = () => {
                 Zeta Solutions
               </span>
             </div>
-            <a
+            <Link
               href="/"
               className="text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] font-medium transition-colors"
             >
               ← Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -473,7 +474,8 @@ const TurnkeyPage = () => {
               Success Stories
             </h2>
             <p className="text-xl text-[var(--color-text-tertiary)] max-w-3xl mx-auto">
-              See how we've helped businesses transform their digital presence.
+              See how we&apos;ve helped businesses transform their digital
+              presence.
             </p>
           </div>
 

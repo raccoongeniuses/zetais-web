@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   Settings,
   CheckCircle,
@@ -40,12 +41,12 @@ const IntegrationsPage = () => {
                 Zeta Solutions
               </span>
             </div>
-            <a
+            <Link
               href="/"
               className="text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] font-medium transition-colors"
             >
               ← Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -667,10 +668,10 @@ const IntegrationsPage = () => {
                 Need a Custom Integration?
               </h2>
               <p className="text-lg text-[var(--color-text-secondary)] mb-6">
-                Don't see the integration you need? Our team can build custom
-                integrations for any third-party service or API. We specialize
-                in creating seamless connections between your existing systems
-                and new tools.
+                Don&apos;t see the integration you need? Our team can build
+                custom integrations for any third-party service or API. We
+                specialize in creating seamless connections between your
+                existing systems and new tools.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center space-x-3">
