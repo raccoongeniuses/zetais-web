@@ -61,16 +61,39 @@ const ZetaSolutionsLanding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A2E2A] text-gray-200">
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundColor: "var(--color-primary-bg)",
+        color: "var(--color-text-secondary)",
+      }}
+    >
       {/* Navigation */}
-      <nav className="fixed top-0 w-full backdrop-blur-sm bg-[#1A2E2A]/80 border-b border-white/10 z-50">
+      <nav
+        className="fixed top-0 w-full backdrop-blur-sm border-b z-50"
+        style={{
+          backgroundColor: "var(--color-nav-bg)",
+          borderColor: "var(--color-border-primary)",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
-                <span className="text-white text-sm font-bold">Z</span>
+              <div
+                className="w-8 h-8 rounded flex items-center justify-center"
+                style={{ backgroundColor: "var(--color-green-primary)" }}
+              >
+                <span
+                  className="text-sm font-bold"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  Z
+                </span>
               </div>
-              <span className="text-white text-lg font-medium">
+              <span
+                className="text-lg font-medium"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 Zeta Solutions
               </span>
             </div>
@@ -86,11 +109,23 @@ const ZetaSolutionsLanding = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors py-2 ${
-                    activeSection === item.id
-                      ? "text-green-400"
-                      : "text-gray-300 hover:text-white"
-                  }`}
+                  className="text-sm font-medium transition-colors py-2"
+                  style={{
+                    color:
+                      activeSection === item.id
+                        ? "var(--color-green-secondary)"
+                        : "var(--color-text-tertiary)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (activeSection !== item.id) {
+                      e.target.style.color = "var(--color-text-primary)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (activeSection !== item.id) {
+                      e.target.style.color = "var(--color-text-tertiary)";
+                    }
+                  }}
                 >
                   {item.label}
                 </button>
@@ -98,7 +133,18 @@ const ZetaSolutionsLanding = () => {
               <div className="flex items-center space-x-3">
                 <Link
                   href="/get-started"
-                  className="bg-green-500 text-white px-4 py-2 rounded text-sm font-medium hover:bg-green-600 transition-colors shadow-md"
+                  className="px-4 py-2 rounded text-sm font-medium transition-colors shadow-md"
+                  style={{
+                    backgroundColor: "var(--color-green-primary)",
+                    color: "var(--color-text-primary)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "var(--color-green-hover)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor =
+                      "var(--color-green-primary)";
+                  }}
                 >
                   Get Started
                 </Link>
@@ -108,7 +154,8 @@ const ZetaSolutionsLanding = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-300 focus:outline-none"
+              className="md:hidden focus:outline-none"
+              style={{ color: "var(--color-text-tertiary)" }}
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -116,7 +163,13 @@ const ZetaSolutionsLanding = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-white/10 bg-[#1A2E2A]">
+            <div
+              className="md:hidden py-4 border-t"
+              style={{
+                borderColor: "var(--color-border-primary)",
+                backgroundColor: "var(--color-primary-bg)",
+              }}
+            >
               {[
                 { id: "home", label: "Home" },
                 { id: "solutions", label: "Solutions" },
@@ -126,7 +179,15 @@ const ZetaSolutionsLanding = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-3 px-6 text-gray-300 hover:bg-white/5"
+                  className="block w-full text-left py-3 px-6"
+                  style={{ color: "var(--color-text-tertiary)" }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor =
+                      "rgba(255, 255, 255, 0.05)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "transparent";
+                  }}
                 >
                   {item.label}
                 </button>
@@ -139,21 +200,40 @@ const ZetaSolutionsLanding = () => {
       {/* Hero Section - Dark Theme */}
       <section id="home" className="relative overflow-hidden py-24 md:py-40">
         {/* Gradient Blobs */}
-        <div className="gradient-blob top-[-20%] left-[-10%] w-[500px] h-[500px] bg-gradient-to-br from-green-500 to-blue-600"></div>
-        <div className="gradient-blob bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-gradient-to-br from-purple-600 to-teal-500"></div>
+        <div
+          className="gradient-blob top-[-20%] left-[-10%] w-[500px] h-[500px]"
+          style={{
+            background:
+              "linear-gradient(to bottom right, var(--color-gradient-start-green), var(--color-gradient-end-blue))",
+          }}
+        ></div>
+        <div
+          className="gradient-blob bottom-[-20%] right-[-10%] w-[600px] h-[600px]"
+          style={{
+            background:
+              "linear-gradient(to bottom right, var(--color-gradient-start-purple), var(--color-gradient-end-teal))",
+          }}
+        ></div>
 
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          <h1
+            className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
+            style={{ color: "var(--color-text-primary)" }}
+          >
             We are the payments people.
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+          <p
+            className="text-lg md:text-xl max-w-2xl mx-auto mb-8"
+            style={{ color: "var(--color-text-tertiary)" }}
+          >
             Zeta's cross-border payments solutions connect organisations and
             communities globally to the network they need to thrive. Together,
             we make money move.
           </p>
           <button
             onClick={() => scrollToSection("solutions")}
-            className="text-green-400 font-semibold group transition-transform transform"
+            className="font-semibold group transition-transform transform"
+            style={{ color: "var(--color-green-secondary)" }}
           >
             Discover more{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -167,10 +247,16 @@ const ZetaSolutionsLanding = () => {
       <section id="solutions" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+            <h2
+              className="text-4xl md:text-5xl font-extrabold"
+              style={{ color: "var(--color-text-primary)" }}
+            >
               Financial Services
             </h2>
-            <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
+            <p
+              className="text-lg mt-4 max-w-2xl mx-auto"
+              style={{ color: "var(--color-text-quaternary)" }}
+            >
               For truly global banking. Everything you need to build, manage,
               and grow your online presence.
             </p>
@@ -181,10 +267,13 @@ const ZetaSolutionsLanding = () => {
               href="/services/hosting"
               className="solution-card p-8 rounded-2xl block"
             >
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3
+                className="text-2xl font-bold mb-3"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 Server & Webhosting
               </h3>
-              <p className="text-gray-400">
+              <p style={{ color: "var(--color-text-quaternary)" }}>
                 We house and secure your online domain and all its data,
                 providing a reliable and safe foundation for your website.
               </p>
@@ -195,10 +284,13 @@ const ZetaSolutionsLanding = () => {
               href="/services/turnkey"
               className="solution-card p-8 rounded-2xl block"
             >
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3
+                className="text-2xl font-bold mb-3"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 Turnkey Solutions
               </h3>
-              <p className="text-gray-400">
+              <p style={{ color: "var(--color-text-quaternary)" }}>
                 Start doing business right away. We set up and manage your
                 online requirements so you can focus on your operations.
               </p>
@@ -209,10 +301,13 @@ const ZetaSolutionsLanding = () => {
               href="/services/payments"
               className="solution-card p-8 rounded-2xl block"
             >
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3
+                className="text-2xl font-bold mb-3"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 Integrate Payment Solutions
               </h3>
-              <p className="text-gray-400">
+              <p style={{ color: "var(--color-text-quaternary)" }}>
                 Process client payments instantly with a few simple steps (Move
                 In) and settle all your payables to any channel or wallet (Move
                 Out).
@@ -224,10 +319,13 @@ const ZetaSolutionsLanding = () => {
               href="/services/sms"
               className="solution-card p-8 rounded-2xl block"
             >
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3
+                className="text-2xl font-bold mb-3"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 SMS Services
               </h3>
-              <p className="text-gray-400">
+              <p style={{ color: "var(--color-text-quaternary)" }}>
                 Engage clients with reliable messaging. Everything you need for
                 your go-to-market strategy with exceptional deliverability.
               </p>
@@ -238,24 +336,44 @@ const ZetaSolutionsLanding = () => {
               href="/services/integrations"
               className="solution-card p-8 rounded-2xl block"
             >
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3
+                className="text-2xl font-bold mb-3"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 Misc 3rd Party Products
               </h3>
-              <p className="text-gray-400">
+              <p style={{ color: "var(--color-text-quaternary)" }}>
                 We offer a variety of third-party products and integrations to
                 further assist and enhance your business capabilities.
               </p>
             </a>
 
             {/* Ready to Start Card */}
-            <div className="bg-green-500/20 border border-green-500/30 text-white p-8 rounded-2xl flex flex-col justify-center items-center text-center">
+            <div
+              className="p-8 rounded-2xl flex flex-col justify-center items-center text-center"
+              style={{
+                backgroundColor: "var(--color-overlay-green)",
+                border: "1px solid var(--color-border-accent)",
+                color: "var(--color-text-primary)",
+              }}
+            >
               <h3 className="text-2xl font-bold mb-3">Ready to Start?</h3>
-              <p className="mb-4 text-green-200">
+              <p className="mb-4" style={{ color: "var(--color-text-accent)" }}>
                 Let us handle the technical details so you can focus on growth.
               </p>
               <Link
                 href="/contact"
-                className="bg-green-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-green-600 transition-colors"
+                className="font-semibold px-6 py-2 rounded-lg transition-colors"
+                style={{
+                  backgroundColor: "var(--color-green-primary)",
+                  color: "var(--color-text-primary)",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "var(--color-green-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "var(--color-green-primary)";
+                }}
               >
                 Contact Sales
               </Link>
@@ -268,10 +386,16 @@ const ZetaSolutionsLanding = () => {
       <section id="about" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+            <h2
+              className="text-4xl md:text-5xl font-extrabold mb-6"
+              style={{ color: "var(--color-text-primary)" }}
+            >
               Trusted Partner Since 2015
             </h2>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            <p
+              className="text-lg max-w-3xl mx-auto"
+              style={{ color: "var(--color-text-quaternary)" }}
+            >
               Founded in 2015, Zeta Solutions was born out of a simple
               realization: setting up and running an online business is not
               easy. Our mission is to make digital transformation accessible,
@@ -283,34 +407,96 @@ const ZetaSolutionsLanding = () => {
           {/* Trust Indicators */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="solution-card p-6 rounded-2xl text-center">
-              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Shield size={24} className="text-green-400" />
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Shield
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
               </div>
-              <div className="font-semibold text-white mb-1">
+              <div
+                className="font-semibold mb-1"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 Regulated & Secure
               </div>
-              <div className="text-sm text-gray-400">Enterprise compliance</div>
+              <div
+                className="text-sm"
+                style={{ color: "var(--color-text-quaternary)" }}
+              >
+                Enterprise compliance
+              </div>
             </div>
             <div className="solution-card p-6 rounded-2xl text-center">
-              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Award size={24} className="text-green-400" />
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Award
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
               </div>
-              <div className="font-semibold text-white mb-1">9+ Years</div>
-              <div className="text-sm text-gray-400">Since 2015</div>
+              <div
+                className="font-semibold mb-1"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                9+ Years
+              </div>
+              <div
+                className="text-sm"
+                style={{ color: "var(--color-text-quaternary)" }}
+              >
+                Since 2015
+              </div>
             </div>
             <div className="solution-card p-6 rounded-2xl text-center">
-              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Globe size={24} className="text-green-400" />
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Globe
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
               </div>
-              <div className="font-semibold text-white mb-1">200+ Clients</div>
-              <div className="text-sm text-gray-400">Worldwide coverage</div>
+              <div
+                className="font-semibold mb-1"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                200+ Clients
+              </div>
+              <div
+                className="text-sm"
+                style={{ color: "var(--color-text-quaternary)" }}
+              >
+                Worldwide coverage
+              </div>
             </div>
             <div className="solution-card p-6 rounded-2xl text-center">
-              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Clock size={24} className="text-green-400" />
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Clock
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
               </div>
-              <div className="font-semibold text-white mb-1">24/7 Support</div>
-              <div className="text-sm text-gray-400">Always available</div>
+              <div
+                className="font-semibold mb-1"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                24/7 Support
+              </div>
+              <div
+                className="text-sm"
+                style={{ color: "var(--color-text-quaternary)" }}
+              >
+                Always available
+              </div>
             </div>
           </div>
         </div>
@@ -320,34 +506,66 @@ const ZetaSolutionsLanding = () => {
       <section id="contact" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+            <h2
+              className="text-4xl md:text-5xl font-extrabold"
+              style={{ color: "var(--color-text-primary)" }}
+            >
               Get Started with Zeta
             </h2>
-            <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
+            <p
+              className="text-lg mt-4 max-w-2xl mx-auto"
+              style={{ color: "var(--color-text-quaternary)" }}
+            >
               Choose the option that best fits your needs.
             </p>
           </div>
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* New Merchants */}
             <div className="solution-card rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-green-400" />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Users
+                  className="w-8 h-8"
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3
+                className="text-2xl font-bold mb-4"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 New Merchants
               </h3>
-              <p className="text-gray-400 mb-6">
+              <p
+                className="mb-6"
+                style={{ color: "var(--color-text-quaternary)" }}
+              >
                 Ready to bring your business online? Let's talk about how we can
                 help you succeed with our comprehensive onboarding process.
               </p>
               <div className="space-y-4">
                 <Link
                   href="/get-started"
-                  className="block w-full bg-green-500 text-white font-semibold py-3 rounded-lg hover:bg-green-600 transition-colors"
+                  className="block w-full font-semibold py-3 rounded-lg transition-colors"
+                  style={{
+                    backgroundColor: "var(--color-green-primary)",
+                    color: "var(--color-text-primary)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "var(--color-green-hover)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor =
+                      "var(--color-green-primary)";
+                  }}
                 >
                   Start Your Journey
                 </Link>
-                <p className="text-sm text-gray-400">
+                <p
+                  className="text-sm"
+                  style={{ color: "var(--color-text-quaternary)" }}
+                >
                   Complete our detailed form to get personalized recommendations
                 </p>
               </div>
@@ -355,24 +573,50 @@ const ZetaSolutionsLanding = () => {
 
             {/* Contact Sales */}
             <div className="solution-card rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-8 h-8 text-blue-400" />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{ backgroundColor: "var(--color-overlay-blue)" }}
+              >
+                <Shield
+                  className="w-8 h-8"
+                  style={{ color: "var(--color-blue-secondary)" }}
+                />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3
+                className="text-2xl font-bold mb-4"
+                style={{ color: "var(--color-text-primary)" }}
+              >
                 Need Support?
               </h3>
-              <p className="text-gray-400 mb-6">
+              <p
+                className="mb-6"
+                style={{ color: "var(--color-text-quaternary)" }}
+              >
                 Already working with us? Get in touch with our support team for
                 assistance with your existing services.
               </p>
               <div className="space-y-4">
                 <Link
                   href="/contact"
-                  className="block w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition-colors"
+                  className="block w-full font-semibold py-3 rounded-lg transition-colors"
+                  style={{
+                    backgroundColor: "var(--color-blue-primary)",
+                    color: "var(--color-text-primary)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "var(--color-blue-hover)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor =
+                      "var(--color-blue-primary)";
+                  }}
                 >
                   Contact Support
                 </Link>
-                <p className="text-sm text-gray-400">
+                <p
+                  className="text-sm"
+                  style={{ color: "var(--color-text-quaternary)" }}
+                >
                   Get help with your Zeta Solutions services
                 </p>
               </div>
@@ -382,23 +626,58 @@ const ZetaSolutionsLanding = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-transparent border-t border-white/10 mt-auto">
+      <footer
+        className="bg-transparent border-t mt-auto"
+        style={{ borderColor: "var(--color-border-primary)" }}
+      >
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
-              <p className="text-xl font-bold text-white">Zeta Solutions</p>
-              <p className="text-gray-400">
+              <p
+                className="text-xl font-bold"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                Zeta Solutions
+              </p>
+              <p style={{ color: "var(--color-text-quaternary)" }}>
                 © 2024 Zeta Solutions. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a
+                href="#"
+                style={{ color: "var(--color-text-quaternary)" }}
+                onMouseEnter={(e) =>
+                  (e.target.style.color = "var(--color-text-primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.color = "var(--color-text-quaternary)")
+                }
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a
+                href="#"
+                style={{ color: "var(--color-text-quaternary)" }}
+                onMouseEnter={(e) =>
+                  (e.target.style.color = "var(--color-text-primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.color = "var(--color-text-quaternary)")
+                }
+              >
                 Terms of Service
               </a>
-              <Link href="/contact" className="text-gray-400 hover:text-white">
+              <Link
+                href="/contact"
+                style={{ color: "var(--color-text-quaternary)" }}
+                onMouseEnter={(e) =>
+                  (e.target.style.color = "var(--color-text-primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.target.style.color = "var(--color-text-quaternary)")
+                }
+              >
                 Contact
               </Link>
             </div>

@@ -292,7 +292,7 @@ const HostingPage = () => {
       </section>
 
       {/* Technical Specifications */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -379,7 +379,7 @@ const HostingPage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

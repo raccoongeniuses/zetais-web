@@ -46,22 +46,22 @@ const SMSPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-orange-50 to-red-100">
+      <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-orange-100 text-orange-700 text-sm px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center bg-orange-500/20 text-orange-400 text-sm px-4 py-2 rounded-full mb-6">
                 <MessageSquare className="w-4 h-4 mr-2" />
                 SMS Services
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Reliable SMS
                 <br />
-                <span className="text-orange-600">Communication</span>
+                <span className="text-orange-400">Communication</span>
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Engage clients with reliable messages. Everything you need to
                 accelerate your go-to-market strategy—while ensuring exceptional
                 message deliverability.
@@ -72,38 +72,38 @@ const SMSPage = () => {
                   <span>Get Started</span>
                   <ArrowRight size={16} />
                 </button>
-                <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded font-medium hover:bg-gray-50 transition-colors">
+                <button className="border border-white/20 text-gray-300 px-6 py-3 rounded font-medium hover:bg-white/5 transition-colors">
                   View Pricing
                 </button>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
+              <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-orange-50 rounded-lg p-4 border border-orange-100">
-                    <div className="text-2xl font-bold text-orange-600 mb-1">
+                  <div className="bg-orange-500/20 rounded-lg p-4 border border-orange-500/30">
+                    <div className="text-2xl font-bold text-orange-400 mb-1">
                       99.9%
                     </div>
-                    <div className="text-sm text-gray-600">Deliverability</div>
+                    <div className="text-sm text-gray-400">Deliverability</div>
                   </div>
-                  <div className="bg-green-50 rounded-lg p-4 border border-green-100">
-                    <div className="text-2xl font-bold text-green-600 mb-1">
+                  <div className="bg-green-500/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="text-2xl font-bold text-green-400 mb-1">
                       &lt;1s
                     </div>
-                    <div className="text-sm text-gray-600">Delivery Time</div>
+                    <div className="text-sm text-gray-400">Delivery Time</div>
                   </div>
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">
+                  <div className="bg-blue-500/20 rounded-lg p-4 border border-blue-500/30">
+                    <div className="text-2xl font-bold text-blue-400 mb-1">
                       200+
                     </div>
-                    <div className="text-sm text-gray-600">Countries</div>
+                    <div className="text-sm text-gray-400">Countries</div>
                   </div>
-                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-100">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">
+                  <div className="bg-purple-500/20 rounded-lg p-4 border border-purple-500/30">
+                    <div className="text-2xl font-bold text-purple-400 mb-1">
                       24/7
                     </div>
-                    <div className="text-sm text-gray-600">Support</div>
+                    <div className="text-sm text-gray-400">Support</div>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const SMSPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -292,7 +292,7 @@ const SMSPage = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -471,7 +471,7 @@ const SMSPage = () => {
       </section>
 
       {/* Technical Specifications */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -554,7 +554,7 @@ const SMSPage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
