@@ -596,6 +596,31 @@ const TurnkeyPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-[#1A2E2A] border-t border-white/10 mt-auto">
+        <div className="max-w-7xl mx-auto px-6 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-center md:text-left mb-4 md:mb-0">
+              <p className="text-xl font-bold text-white">Zeta Solutions</p>
+              <p className="text-gray-400">
+                © 2024 Zeta Solutions. All rights reserved.
+              </p>
+            </div>
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-400 hover:text-white">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                Terms of Service
+              </a>
+              <a href="/contact" className="text-gray-400 hover:text-white">
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
