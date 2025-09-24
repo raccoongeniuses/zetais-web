@@ -267,6 +267,15 @@ const ZetaSolutionsLanding = () => {
               href="/services/hosting"
               className="solution-card p-8 rounded-2xl block"
             >
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Server
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
+              </div>
               <h3
                 className="text-2xl font-bold mb-3"
                 style={{ color: "var(--color-text-primary)" }}
@@ -284,6 +293,15 @@ const ZetaSolutionsLanding = () => {
               href="/services/turnkey"
               className="solution-card p-8 rounded-2xl block"
             >
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Settings
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
+              </div>
               <h3
                 className="text-2xl font-bold mb-3"
                 style={{ color: "var(--color-text-primary)" }}
@@ -301,6 +319,15 @@ const ZetaSolutionsLanding = () => {
               href="/services/payments"
               className="solution-card p-8 rounded-2xl block"
             >
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <CreditCard
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
+              </div>
               <h3
                 className="text-2xl font-bold mb-3"
                 style={{ color: "var(--color-text-primary)" }}
@@ -319,6 +346,15 @@ const ZetaSolutionsLanding = () => {
               href="/services/sms"
               className="solution-card p-8 rounded-2xl block"
             >
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <MessageSquare
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
+              </div>
               <h3
                 className="text-2xl font-bold mb-3"
                 style={{ color: "var(--color-text-primary)" }}
@@ -336,6 +372,15 @@ const ZetaSolutionsLanding = () => {
               href="/services/integrations"
               className="solution-card p-8 rounded-2xl block"
             >
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                style={{ backgroundColor: "var(--color-overlay-green)" }}
+              >
+                <Layers
+                  size={24}
+                  style={{ color: "var(--color-green-secondary)" }}
+                />
+              </div>
               <h3
                 className="text-2xl font-bold mb-3"
                 style={{ color: "var(--color-text-primary)" }}
