@@ -287,7 +287,10 @@ const ZetaSolutionsLanding = () => {
           {/* Solutions Grid - InPay Style */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Server & Hosting */}
-            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow">
+            <a
+              href="/services/hosting"
+              className="block bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow"
+            >
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <Server size={24} className="text-blue-600" />
               </div>
@@ -311,10 +314,13 @@ const ZetaSolutionsLanding = () => {
                   <span>24/7 monitoring & support</span>
                 </li>
               </ul>
-            </div>
+            </a>
 
             {/* Turnkey Solutions */}
-            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow">
+            <a
+              href="/services/turnkey"
+              className="block bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow"
+            >
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
                 <Zap size={24} className="text-green-600" />
               </div>
@@ -340,10 +346,13 @@ const ZetaSolutionsLanding = () => {
                   <span>Ongoing maintenance</span>
                 </li>
               </ul>
-            </div>
+            </a>
 
             {/* Payment Solutions */}
-            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow">
+            <a
+              href="/services/payments"
+              className="block bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow"
+            >
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                 <CreditCard size={24} className="text-purple-600" />
               </div>
@@ -371,10 +380,13 @@ const ZetaSolutionsLanding = () => {
                   <span>Multi-currency support</span>
                 </li>
               </ul>
-            </div>
+            </a>
 
             {/* SMS Services */}
-            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow">
+            <a
+              href="/services/sms"
+              className="block bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow"
+            >
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
                 <MessageSquare size={24} className="text-orange-600" />
               </div>
@@ -396,10 +408,13 @@ const ZetaSolutionsLanding = () => {
                   <span>Automated workflows</span>
                 </li>
               </ul>
-            </div>
+            </a>
 
             {/* Third Party Integrations */}
-            <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow">
+            <a
+              href="/services/integrations"
+              className="block bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg transition-shadow"
+            >
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
                 <Settings size={24} className="text-indigo-600" />
               </div>
@@ -419,7 +434,7 @@ const ZetaSolutionsLanding = () => {
                   <span>Analytics & reporting</span>
                 </li>
               </ul>
-            </div>
+            </a>
 
             {/* Customer Portal */}
             <div className="bg-blue-50 rounded-lg border border-blue-200 p-8 hover:shadow-lg transition-shadow">
