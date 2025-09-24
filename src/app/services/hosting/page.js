@@ -21,22 +21,22 @@ import {
 
 const HostingPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#1A2E2A] text-gray-200">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
+      <nav className="fixed top-0 w-full bg-transparent backdrop-blur-sm bg-[#1A2E2A]/80 border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+              <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm font-bold">Z</span>
               </div>
-              <span className="text-gray-900 text-lg font-medium">
+              <span className="text-white text-lg font-medium">
                 Zeta Solutions
               </span>
             </div>
             <a
               href="/"
-              className="text-sm text-gray-600 hover:text-blue-600 font-medium transition-colors"
+              className="text-sm text-gray-300 hover:text-white font-medium transition-colors"
             >
               ← Back to Home
             </a>
@@ -45,22 +45,22 @@ const HostingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center bg-blue-100 text-blue-700 text-sm px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center bg-green-500/20 text-green-400 text-sm px-4 py-2 rounded-full mb-6">
                 <Server className="w-4 h-4 mr-2" />
                 Server & Webhosting Services
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Secure, Reliable
                 <br />
-                <span className="text-blue-600">Web Hosting</span>
+                <span className="text-green-400">Web Hosting</span>
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 We house and secure all your online domain and its data with it.
                 Our enterprise-grade hosting infrastructure ensures your
                 business stays online with 99.9% uptime guarantee and 24/7
@@ -68,42 +68,42 @@ const HostingPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-blue-600 text-white px-6 py-3 rounded font-medium hover:bg-blue-700 transition-colors inline-flex items-center justify-center space-x-2">
+                <button className="bg-green-500 text-white px-6 py-3 rounded font-medium hover:bg-green-600 transition-colors inline-flex items-center justify-center space-x-2">
                   <span>Get Started</span>
                   <ArrowRight size={16} />
                 </button>
-                <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded font-medium hover:bg-gray-50 transition-colors">
+                <button className="border border-white/20 text-gray-300 px-6 py-3 rounded font-medium hover:bg-white/5 transition-colors">
                   View Pricing
                 </button>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
+              <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">
+                  <div className="bg-green-500/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="text-2xl font-bold text-green-400 mb-1">
                       99.9%
                     </div>
-                    <div className="text-sm text-gray-600">Uptime SLA</div>
+                    <div className="text-sm text-gray-400">Uptime SLA</div>
                   </div>
-                  <div className="bg-green-50 rounded-lg p-4 border border-green-100">
-                    <div className="text-2xl font-bold text-green-600 mb-1">
+                  <div className="bg-green-500/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="text-2xl font-bold text-green-400 mb-1">
                       24/7
                     </div>
-                    <div className="text-sm text-gray-600">Monitoring</div>
+                    <div className="text-sm text-gray-400">Monitoring</div>
                   </div>
-                  <div className="bg-purple-50 rounded-lg p-4 border border-purple-100">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">
+                  <div className="bg-green-500/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="text-2xl font-bold text-green-400 mb-1">
                       SSL
                     </div>
-                    <div className="text-sm text-gray-600">Included</div>
+                    <div className="text-sm text-gray-400">Included</div>
                   </div>
-                  <div className="bg-orange-50 rounded-lg p-4 border border-orange-100">
-                    <div className="text-2xl font-bold text-orange-600 mb-1">
+                  <div className="bg-green-500/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="text-2xl font-bold text-green-400 mb-1">
                       CDN
                     </div>
-                    <div className="text-sm text-gray-600">Global</div>
+                    <div className="text-sm text-gray-400">Global</div>
                   </div>
                 </div>
               </div>
@@ -113,13 +113,13 @@ const HostingPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Enterprise-Grade Hosting Features
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Everything you need to keep your website fast, secure, and always
               available.
             </p>

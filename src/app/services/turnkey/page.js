@@ -22,22 +22,22 @@ import {
 
 const TurnkeyPage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#1A2E2A] text-gray-200">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
+      <nav className="fixed top-0 w-full bg-transparent backdrop-blur-sm bg-[#1A2E2A]/80 border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+              <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm font-bold">Z</span>
               </div>
-              <span className="text-gray-900 text-lg font-medium">
+              <span className="text-white text-lg font-medium">
                 Zeta Solutions
               </span>
             </div>
             <a
               href="/"
-              className="text-sm text-gray-600 hover:text-blue-600 font-medium transition-colors"
+              className="text-sm text-gray-300 hover:text-white font-medium transition-colors"
             >
               ← Back to Home
             </a>
