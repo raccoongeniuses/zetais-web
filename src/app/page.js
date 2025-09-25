@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ChevronRight,
   Server,
@@ -215,31 +216,47 @@ const ZetaSolutionsLanding = () => {
           }}
         ></div>
 
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <h1
-            className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            We are the payments people.
-          </h1>
-          <p
-            className="text-lg md:text-xl max-w-2xl mx-auto mb-8"
-            style={{ color: "var(--color-text-tertiary)" }}
-          >
-            Zeta&apos;s cross-border payments solutions connect organisations
-            and communities globally to the network they need to thrive.
-            Together, we make money move.
-          </p>
-          <button
-            onClick={() => scrollToSection("solutions")}
-            className="font-semibold group transition-transform transform"
-            style={{ color: "var(--color-green-secondary)" }}
-          >
-            Discover more{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              &rarr;
-            </span>
-          </button>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1
+                className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                We are the payments people.
+              </h1>
+              <p
+                className="text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-8"
+                style={{ color: "var(--color-text-tertiary)" }}
+              >
+                Zeta&apos;s cross-border payments solutions connect
+                organisations and communities globally to the network they need
+                to thrive. Together, we make money move.
+              </p>
+              <button
+                onClick={() => scrollToSection("solutions")}
+                className="font-semibold group transition-transform transform"
+                style={{ color: "var(--color-green-secondary)" }}
+              >
+                Discover more{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  &rarr;
+                </span>
+              </button>
+            </div>
+            <div className="relative">
+              <div className="relative w-full h-96 lg:h-[500px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/assets/payment-people.jpg"
+                  alt="Modern payment technology and financial solutions"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -265,16 +282,27 @@ const ZetaSolutionsLanding = () => {
             {/* Server & Hosting */}
             <a
               href="/services/hosting"
-              className="solution-card p-8 rounded-2xl block"
+              className="solution-card p-8 rounded-2xl block group"
             >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "var(--color-overlay-green)" }}
-              >
-                <Server
-                  size={24}
-                  style={{ color: "var(--color-green-secondary)" }}
+              <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+                <Image
+                  src="/assets/square.jpg"
+                  alt="Server infrastructure and hosting solutions"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: "var(--color-overlay-green)" }}
+                  >
+                    <Server
+                      size={20}
+                      style={{ color: "var(--color-green-secondary)" }}
+                    />
+                  </div>
+                </div>
               </div>
               <h3
                 className="text-2xl font-bold mb-3"
@@ -293,14 +321,25 @@ const ZetaSolutionsLanding = () => {
               href="/services/turnkey"
               className="solution-card p-8 rounded-2xl block"
             >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "var(--color-overlay-green)" }}
-              >
-                <Settings
-                  size={24}
-                  style={{ color: "var(--color-green-secondary)" }}
+              <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+                <Image
+                  src="/assets/solution.jpg"
+                  alt="Turnkey Solutions"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: "var(--color-overlay-green)" }}
+                  >
+                    <Settings
+                      size={20}
+                      style={{ color: "var(--color-green-secondary)" }}
+                    />
+                  </div>
+                </div>
               </div>
               <h3
                 className="text-2xl font-bold mb-3"
@@ -317,16 +356,27 @@ const ZetaSolutionsLanding = () => {
             {/* Payment Solutions */}
             <a
               href="/services/payments"
-              className="solution-card p-8 rounded-2xl block"
+              className="solution-card p-8 rounded-2xl block group"
             >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "var(--color-overlay-green)" }}
-              >
-                <CreditCard
-                  size={24}
-                  style={{ color: "var(--color-green-secondary)" }}
+              <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+                <Image
+                  src="/assets/tree.png"
+                  alt="Payment processing and financial technology"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: "var(--color-overlay-green)" }}
+                  >
+                    <CreditCard
+                      size={20}
+                      style={{ color: "var(--color-green-secondary)" }}
+                    />
+                  </div>
+                </div>
               </div>
               <h3
                 className="text-2xl font-bold mb-3"
@@ -346,14 +396,25 @@ const ZetaSolutionsLanding = () => {
               href="/services/sms"
               className="solution-card p-8 rounded-2xl block"
             >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "var(--color-overlay-green)" }}
-              >
-                <MessageSquare
-                  size={24}
-                  style={{ color: "var(--color-green-secondary)" }}
+              <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+                <Image
+                  src="/assets/sms.jpg"
+                  alt="SMS Services"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: "var(--color-overlay-green)" }}
+                  >
+                    <MessageSquare
+                      size={20}
+                      style={{ color: "var(--color-green-secondary)" }}
+                    />
+                  </div>
+                </div>
               </div>
               <h3
                 className="text-2xl font-bold mb-3"
@@ -372,14 +433,25 @@ const ZetaSolutionsLanding = () => {
               href="/services/integrations"
               className="solution-card p-8 rounded-2xl block"
             >
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "var(--color-overlay-green)" }}
-              >
-                <Layers
-                  size={24}
-                  style={{ color: "var(--color-green-secondary)" }}
+              <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+                <Image
+                  src="/assets/misc.jpg"
+                  alt="Misc 3rd Party Products"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute top-4 right-4">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: "var(--color-overlay-green)" }}
+                  >
+                    <Layers
+                      size={20}
+                      style={{ color: "var(--color-green-secondary)" }}
+                    />
+                  </div>
+                </div>
               </div>
               <h3
                 className="text-2xl font-bold mb-3"
@@ -430,23 +502,36 @@ const ZetaSolutionsLanding = () => {
       {/* About Section - Dark Theme */}
       <section id="about" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2
-              className="text-4xl md:text-5xl font-extrabold mb-6"
-              style={{ color: "var(--color-text-primary)" }}
-            >
-              Trusted Partner Since 2015
-            </h2>
-            <p
-              className="text-lg max-w-3xl mx-auto"
-              style={{ color: "var(--color-text-quaternary)" }}
-            >
-              Founded in 2015, Zeta Solutions was born out of a simple
-              realization: setting up and running an online business is not
-              easy. Our mission is to make digital transformation accessible,
-              efficient, and impactful for every business—no matter the size or
-              industry.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <h2
+                className="text-4xl md:text-5xl font-extrabold mb-6"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                Trusted Partner Since 2015
+              </h2>
+              <p
+                className="text-lg"
+                style={{ color: "var(--color-text-quaternary)" }}
+              >
+                Founded in 2015, Zeta Solutions was born out of a simple
+                realization: setting up and running an online business is not
+                easy. Our mission is to make digital transformation accessible,
+                efficient, and impactful for every business—no matter the size
+                or industry.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="relative w-full h-80 rounded-2xl overflow-hidden">
+                <Image
+                  src="/assets/person-image.jpg"
+                  alt="Zeta Solutions team and company culture"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+            </div>
           </div>
 
           {/* Trust Indicators */}

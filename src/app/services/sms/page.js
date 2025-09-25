@@ -759,7 +759,7 @@ const SMSPage = () => {
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-xl font-bold text-white">Zeta Solutions</p>
               <p className="text-gray-400">
-                © 2024 Zeta Solutions. All rights reserved.
+                © 2025 Zeta Solutions. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6">
