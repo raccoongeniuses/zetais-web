@@ -75,7 +75,7 @@ const DashboardPage = () => {
       type: "Payment",
       amount: "$1,250.00",
       status: "Completed",
-      date: "2024-01-15",
+      date: "2025-01-15",
       description: "Monthly subscription payment",
     },
     {
@@ -83,7 +83,7 @@ const DashboardPage = () => {
       type: "SMS",
       amount: "$45.20",
       status: "Completed",
-      date: "2024-01-14",
+      date: "2025-01-14",
       description: "Bulk SMS campaign",
     },
     {
@@ -91,7 +91,7 @@ const DashboardPage = () => {
       type: "Hosting",
       amount: "$89.99",
       status: "Pending",
-      date: "2024-01-13",
+      date: "2025-01-13",
       description: "Server upgrade",
     },
     {
@@ -99,7 +99,7 @@ const DashboardPage = () => {
       type: "Payment",
       amount: "$2,100.00",
       status: "Completed",
-      date: "2024-01-12",
+      date: "2025-01-12",
       description: "Client payment processing",
     },
   ];

@@ -686,7 +686,7 @@ const ZetaSolutionsLanding = () => {
                 Zeta Solutions
               </p>
               <p style={{ color: "var(--color-text-quaternary)" }}>
-                © 2024 Zeta Solutions. All rights reserved.
+                © 2025 Zeta Solutions. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6">

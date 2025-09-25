@@ -652,7 +652,7 @@ const PaymentsPage = () => {
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-xl font-bold text-white">Zeta Solutions</p>
               <p style={{ color: "var(--color-text-quaternary)" }}>
-                © 2024 Zeta Solutions. All rights reserved.
+                © 2025 Zeta Solutions. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6">
