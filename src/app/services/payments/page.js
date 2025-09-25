@@ -253,28 +253,28 @@ const PaymentsPage = () => {
                     label="Success Rate"
                     bgColor="bg-white/5"
                     borderColor="border-white/10"
-                    textColor="text-green-400"
+                    textColor="text-[var(--color-green-secondary)]"
                   />
                   <StatCard
                     value="&lt;3s"
                     label="Processing"
                     bgColor="bg-white/5"
                     borderColor="border-white/10"
-                    textColor="text-green-400"
+                    textColor="text-[var(--color-green-secondary)]"
                   />
                   <StatCard
                     value="200+"
                     label="Countries"
                     bgColor="bg-white/5"
                     borderColor="border-white/10"
-                    textColor="text-green-400"
+                    textColor="text-[var(--color-green-secondary)]"
                   />
                   <StatCard
                     value="50+"
                     label="Currencies"
                     bgColor="bg-white/5"
                     borderColor="border-white/10"
-                    textColor="text-green-400"
+                    textColor="text-[var(--color-green-secondary)]"
                   />
                 </div>
               </div>

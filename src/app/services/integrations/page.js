@@ -90,9 +90,9 @@ const IntegrationsPage = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-[var(--color-border-primary)] rounded-2xl p-8 border border-[var(--color-border-primary)]">
+              <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-[var(--color-overlay-green)] rounded-lg p-4 border border-[var(--color-border-accent)]">
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                     <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       100+
                     </div>
@@ -100,7 +100,7 @@ const IntegrationsPage = () => {
                       Integrations
                     </div>
                   </div>
-                  <div className="bg-[var(--color-overlay-green)] rounded-lg p-4 border border-[var(--color-border-accent)]">
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                     <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       24/7
                     </div>
@@ -108,7 +108,7 @@ const IntegrationsPage = () => {
                       Support
                     </div>
                   </div>
-                  <div className="bg-[var(--color-overlay-green)] rounded-lg p-4 border border-[var(--color-border-accent)]">
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                     <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       API
                     </div>
@@ -116,7 +116,7 @@ const IntegrationsPage = () => {
                       First
                     </div>
                   </div>
-                  <div className="bg-[var(--color-overlay-green)] rounded-lg p-4 border border-[var(--color-border-accent)]">
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                     <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       Custom
                     </div>

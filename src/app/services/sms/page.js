@@ -107,13 +107,7 @@ const SMSPage = () => {
             <div className="relative">
               <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div
-                    className="rounded-lg p-4 border"
-                    style={{
-                      backgroundColor: "var(--color-overlay-green)",
-                      borderColor: "var(--color-border-accent)",
-                    }}
-                  >
+                  <div className="rounded-lg p-4 border border-white/10 bg-white/5">
                     <div
                       className="text-2xl font-bold mb-1"
                       style={{ color: "var(--color-green-secondary)" }}
@@ -122,13 +116,7 @@ const SMSPage = () => {
                     </div>
                     <div className="text-sm text-gray-400">Deliverability</div>
                   </div>
-                  <div
-                    className="rounded-lg p-4 border"
-                    style={{
-                      backgroundColor: "var(--color-overlay-green)",
-                      borderColor: "var(--color-border-accent)",
-                    }}
-                  >
+                  <div className="rounded-lg p-4 border border-white/10 bg-white/5">
                     <div
                       className="text-2xl font-bold mb-1"
                       style={{ color: "var(--color-green-secondary)" }}
@@ -137,13 +125,7 @@ const SMSPage = () => {
                     </div>
                     <div className="text-sm text-gray-400">Delivery Time</div>
                   </div>
-                  <div
-                    className="rounded-lg p-4 border"
-                    style={{
-                      backgroundColor: "var(--color-overlay-green)",
-                      borderColor: "var(--color-border-accent)",
-                    }}
-                  >
+                  <div className="rounded-lg p-4 border border-white/10 bg-white/5">
                     <div
                       className="text-2xl font-bold mb-1"
                       style={{ color: "var(--color-green-secondary)" }}
@@ -152,13 +134,7 @@ const SMSPage = () => {
                     </div>
                     <div className="text-sm text-gray-400">Countries</div>
                   </div>
-                  <div
-                    className="rounded-lg p-4 border"
-                    style={{
-                      backgroundColor: "var(--color-overlay-green)",
-                      borderColor: "var(--color-border-accent)",
-                    }}
-                  >
+                  <div className="rounded-lg p-4 border border-white/10 bg-white/5">
                     <div
                       className="text-2xl font-bold mb-1"
                       style={{ color: "var(--color-green-secondary)" }}
@@ -732,7 +708,7 @@ const SMSPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-600">
+      <section className="py-20 bg-[var(--color-green-primary)]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Start SMS Marketing?

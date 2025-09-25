@@ -110,25 +110,25 @@ const TurnkeyPage = () => {
               <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="text-2xl font-bold text-green-400 mb-1">
+                    <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       30
                     </div>
                     <div className="text-sm text-gray-400">Days Setup</div>
                   </div>
                   <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="text-2xl font-bold text-green-400 mb-1">
+                    <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       100%
                     </div>
                     <div className="text-sm text-gray-400">Managed</div>
                   </div>
                   <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="text-2xl font-bold text-green-400 mb-1">
+                    <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       24/7
                     </div>
                     <div className="text-sm text-gray-400">Support</div>
                   </div>
                   <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="text-2xl font-bold text-green-400 mb-1">
+                    <div className="text-2xl font-bold text-[var(--color-green-secondary)] mb-1">
                       500+
                     </div>
                     <div className="text-sm text-gray-400">Projects</div>
