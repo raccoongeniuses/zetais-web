@@ -223,15 +223,18 @@ const ZetaSolutionsLanding = () => {
                 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
                 style={{ color: "var(--color-text-primary)" }}
               >
-                We are the payments people.
+                Empowering Your Vision. Accelerating Your Success.
               </h1>
               <p
                 className="text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-8"
                 style={{ color: "var(--color-text-tertiary)" }}
               >
-                Zeta&apos;s cross-border payments solutions connect
-                organisations and communities globally to the network they need
-                to thrive. Together, we make money move.
+                ​We don't just provide services; we act as your dedicated
+                enabler. We specialize in providing the essential tools,
+                expertise, and infrastructure you need to overcome challenges,
+                drive innovation, and achieve sustainable growth. Think of us as
+                the reliable foundation that lets your team focus purely on what
+                they do best.
               </p>
               <button
                 onClick={() => scrollToSection("solutions")}
