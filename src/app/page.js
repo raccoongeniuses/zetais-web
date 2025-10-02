@@ -250,6 +250,7 @@ const ZetaSolutionsLanding = () => {
                   src="/assets/payment-people.jpg"
                   alt="Modern payment technology and financial solutions"
                   fill
+                  quality={80}
                   className="object-cover"
                   priority
                 />
@@ -289,6 +290,7 @@ const ZetaSolutionsLanding = () => {
                   src="/assets/square.jpg"
                   alt="Server infrastructure and hosting solutions"
                   fill
+                  quality={80}
                   className="object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -326,6 +328,7 @@ const ZetaSolutionsLanding = () => {
                   src="/assets/solution.jpg"
                   alt="Turnkey Solutions"
                   fill
+                  quality={80}
                   className="object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -363,6 +366,7 @@ const ZetaSolutionsLanding = () => {
                   src="/assets/tree.png"
                   alt="Payment processing and financial technology"
                   fill
+                  quality={80}
                   className="object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -401,6 +405,7 @@ const ZetaSolutionsLanding = () => {
                   src="/assets/sms.jpg"
                   alt="SMS Services"
                   fill
+                  quality={80}
                   className="object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -438,6 +443,7 @@ const ZetaSolutionsLanding = () => {
                   src="/assets/misc.jpg"
                   alt="Misc 3rd Party Products"
                   fill
+                  quality={80}
                   className="object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -527,6 +533,7 @@ const ZetaSolutionsLanding = () => {
                   src="/assets/person-image.jpg"
                   alt="Zeta Solutions team and company culture"
                   fill
+                  quality={80}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
