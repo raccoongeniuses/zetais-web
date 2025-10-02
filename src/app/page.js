@@ -466,11 +466,12 @@ const ZetaSolutionsLanding = () => {
                 className="text-2xl font-bold mb-3"
                 style={{ color: "var(--color-text-primary)" }}
               >
-                Misc 3rd Party Products
+                Bespoke Solutions
               </h3>
               <p style={{ color: "var(--color-text-quaternary)" }}>
-                We offer a variety of third-party products and integrations to
-                further assist and enhance your business capabilities.
+                We customise unique Solutions for your needs through our
+                proprietary & misc 3rd party products that may aid in providing
+                the right solutions.
               </p>
             </a>
 
