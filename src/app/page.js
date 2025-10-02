@@ -272,14 +272,17 @@ const ZetaSolutionsLanding = () => {
               className="text-4xl md:text-5xl font-extrabold"
               style={{ color: "var(--color-text-primary)" }}
             >
-              Financial Services
+              Products & Services: The Integrated Approach to Your Success
             </h2>
             <p
               className="text-lg mt-4 max-w-2xl mx-auto"
               style={{ color: "var(--color-text-quaternary)" }}
             >
-              For truly global banking. Everything you need to build, manage,
-              and grow your online presence.
+              We believe a complete solution requires more than just a single
+              tool—it demands an ecosystem. Our offerings are built around a
+              powerful combination of <b>innovative products</b> and{" "}
+              <b>expert services</b> designed to work together seamlessly. We
+              support through some of our major services below
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
