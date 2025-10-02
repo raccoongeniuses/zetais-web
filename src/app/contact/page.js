@@ -295,7 +295,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <p className="text-sm text-gray-400">Email</p>
-                        <p className="text-white">Q@zetais.com</p>
+                        <p className="text-white">support@zetais.com</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
