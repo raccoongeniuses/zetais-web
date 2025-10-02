@@ -229,7 +229,7 @@ const ZetaSolutionsLanding = () => {
                 className="text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 mb-8"
                 style={{ color: "var(--color-text-tertiary)" }}
               >
-                ​We don't just provide services; we act as your dedicated
+                ​We don&apos;t just provide services; we act as your dedicated
                 enabler. We specialize in providing the essential tools,
                 expertise, and infrastructure you need to overcome challenges,
                 drive innovation, and achieve sustainable growth. Think of us as
