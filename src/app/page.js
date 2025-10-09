@@ -26,6 +26,7 @@ import {
   Layers,
   Eye,
 } from "lucide-react";
+import LanguageSelector from "../components/LanguageSelector";
 
 const ZetaSolutionsLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,6 +132,7 @@ const ZetaSolutionsLanding = () => {
                   {item.label}
                 </button>
               ))}
+              <LanguageSelector />
               <div className="flex items-center space-x-3">
                 <Link
                   href="/get-started"
@@ -193,6 +195,12 @@ const ZetaSolutionsLanding = () => {
                   {item.label}
                 </button>
               ))}
+              <div className="px-6 py-3 border-t" style={{ borderColor: "var(--color-border-primary)" }}>
+                <div className="text-sm font-medium mb-2" style={{ color: "var(--color-text-tertiary)" }}>
+                  Language
+                </div>
+                <LanguageSelector />
+              </div>
             </div>
           )}
         </div>
