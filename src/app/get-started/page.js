@@ -19,6 +19,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const GetStartedPage = () => {
   const [formData, setFormData] = useState({
@@ -554,9 +555,13 @@ const GetStartedPage = () => {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
-                <span className="text-white text-sm font-bold">Z</span>
-              </div>
+              <Image
+                src="/assets/zeta-logo.jpg"
+                alt="Zeta Solutions"
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded object-cover"
+              />
               <span className="text-white text-lg font-medium">
                 Zeta Solutions
               </span>

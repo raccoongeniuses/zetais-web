@@ -81,17 +81,13 @@ const ZetaSolutionsLanding = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div
-                className="w-8 h-8 rounded flex items-center justify-center"
-                style={{ backgroundColor: "var(--color-green-primary)" }}
-              >
-                <span
-                  className="text-sm font-bold"
-                  style={{ color: "var(--color-text-primary)" }}
-                >
-                  Z
-                </span>
-              </div>
+              <Image
+                src="/assets/zeta-logo.jpg"
+                alt="Zeta Solutions"
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded object-cover"
+              />
               <span
                 className="text-lg font-medium"
                 style={{ color: "var(--color-text-primary)" }}

@@ -9,6 +9,9 @@ const LanguageSelector = () => {
 
   const languages = [
     { code: "en", name: "English", nativeName: "English" },
+    { code: "id", name: "Indonesian", nativeName: "Bahasa Indonesia" },
+    { code: "tl", name: "Tagalog", nativeName: "Tagalog" },
+    { code: "ms", name: "Malay", nativeName: "Bahasa Melayu" },
     { code: "es", name: "Spanish", nativeName: "Español" },
     { code: "fr", name: "French", nativeName: "Français" },
     { code: "de", name: "German", nativeName: "Deutsch" },
@@ -165,7 +168,7 @@ const LanguageSelector = () => {
             {
               pageLanguage: "en",
               includedLanguages:
-                "en,es,fr,de,it,pt,ru,ja,ko,zh-CN,zh-TW,ar,hi,th,vi",
+                "en,id,tl,ms,es,fr,de,it,pt,ru,ja,ko,zh-CN,zh-TW,ar,hi,th,vi",
               layout:
                 window.google.translate.TranslateElement.InlineLayout.SIMPLE,
               autoDisplay: false,
